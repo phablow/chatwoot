@@ -18,16 +18,14 @@ const conversations = accountId => ({
     'conversation_through_participating',
     'folder_conversations',
     'conversations_through_folders',
-    'conversation_unattended',
-    'conversation_through_unattended',
   ],
   menuItems: [
     {
       icon: 'chat',
-      label: 'ALL_CONVERSATIONS',
+      label: 'ASSIGNED_CONVERSATIONS',
       key: 'conversations',
       toState: frontendURL(`accounts/${accountId}/dashboard`),
-      toolTip: 'Conversation from all subscribed inboxes',
+      toolTip: 'Conversations assigned to you',
       toStateName: 'home',
     },
     {
@@ -36,14 +34,7 @@ const conversations = accountId => ({
       key: 'conversation_mentions',
       toState: frontendURL(`accounts/${accountId}/mentions/conversations`),
       toStateName: 'conversation_mentions',
-    },
-    {
-      icon: 'mail-unread',
-      label: 'UNATTENDED_CONVERSATIONS',
-      key: 'conversation_unattended',
-      toState: frontendURL(`accounts/${accountId}/unattended/conversations`),
-      toStateName: 'conversation_unattended',
-    },
+    }
   ],
 });
 
